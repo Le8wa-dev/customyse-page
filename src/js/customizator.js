@@ -6,6 +6,9 @@ export default class Customizator {
         this.btnBlock.addEventListener('click', e => {
             this.onScaleChange(e);
         });
+        this.colorPicker.addEventListener('input', e => {
+            this.onColorChange(e);
+        });
     }
 
 
@@ -63,6 +66,12 @@ export default class Customizator {
         }
 
         recursy(body);
+    }
 
+    onColorChange(e) {
+        const body = document.querySelector('body');
+        body.style.backgroundColor = e.target.value;
+
+        console.log(e.target.value);
     }
 }

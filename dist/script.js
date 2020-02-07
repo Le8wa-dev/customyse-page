@@ -2195,6 +2195,9 @@ function () {
     this.btnBlock.addEventListener('click', function (e) {
       _this.onScaleChange(e);
     });
+    this.colorPicker.addEventListener('input', function (e) {
+      _this.onColorChange(e);
+    });
   }
 
   _createClass(Customizator, [{
@@ -2246,6 +2249,13 @@ function () {
       }
 
       recursy(body);
+    }
+  }, {
+    key: "onColorChange",
+    value: function onColorChange(e) {
+      var body = document.querySelector('body');
+      body.style.backgroundColor = e.target.value;
+      console.log(e.target.value);
     }
   }]);
 
